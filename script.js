@@ -24,13 +24,8 @@ const operate = (num1, num2, operador) => {
 
 
 const ecrã = document.querySelector("#ecrã");
-const numero = document.querySelector(".numero");
+const numero = document.querySelectorAll(".numero");
 const operador = document.querySelector(".operador");
 
-numero.addEventListener("click", (e) => {
-    ecrã.value += numero.textContent;
-    
-})
-operador.addEventListener("click", (e) => {
-    ecrã.value += operador.textContent;
-})
+
+
