@@ -145,6 +145,7 @@ teclado.addEventListener("click", (e) => {
             break;
         case "igual":
             valor = ecrã.value;
+            if(!valor) {alert("Tem de inserir números...")};
             console.log(valor);
             operador = valor.match(regex);
             numeros = valor.split(regex);
@@ -155,6 +156,7 @@ teclado.addEventListener("click", (e) => {
         case "apagar":
             ecrã.value = "";
             valor = "";
+            resultado = 0;
             break;
     }
 })
