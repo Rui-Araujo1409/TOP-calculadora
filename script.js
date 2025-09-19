@@ -45,6 +45,9 @@ const apagar = document.querySelector("#apagar");
 let valor = "";
 let resultado = 0;
 let regex = /[+-/X]/g;
+let operador;
+let numeros;
+
 
 teclado.addEventListener("click", (e) => {
     let target = e.target;
@@ -104,8 +107,8 @@ teclado.addEventListener("click", (e) => {
         case "igual":
             valor = ecrã.value;
             console.log(valor);
-            let operador = valor.match(regex);
-            let numeros = valor.split(regex);
+            operador = valor.match(regex);
+            numeros = valor.split(regex);
             resultado = operate(numeros[0], numeros[1], operador[0]);
             console.log(resultado);
             ecrã.value = resultado;
