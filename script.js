@@ -84,25 +84,64 @@ teclado.addEventListener("click", (e) => {
             ecrã.value += "9";
             break;
         case "soma":
-            // valor = ecrã.value;
-            //valor.push("+");
-            //console.log(valor);
-            ecrã.value += "+";
+            valor = ecrã.value;
+            operador = valor.match(regex);
+            if (operador) {
+                numeros = valor.split(regex);
+                resultado = operate(numeros[0], numeros[1], operador[0]);
+                console.log(resultado);
+                ecrã.value = resultado;
+                ecrã.value += "+";
+            } else {
+                ecrã.value += "+";
+                valor = ecrã.value;
+                console.log(valor);
+            }
             break;
         case "sub":
-            //valor.push("-");
-            //console.log(valor);
-            ecrã.value += "-";
+            valor = ecrã.value;
+            operador = valor.match(regex);
+            if (operador) {
+                numeros = valor.split(regex);
+                resultado = operate(numeros[0], numeros[1], operador[0]);
+                console.log(resultado);
+                ecrã.value = resultado;
+                ecrã.value += "-";
+            } else {
+                ecrã.value += "-";
+                valor = ecrã.value;
+                console.log(valor);
+            }
             break;
         case "multi":
-            //valor.push("x");
-            //console.log(valor);
-            ecrã.value += "X";
+            valor = ecrã.value;
+            operador = valor.match(regex);
+            if (operador) {
+                numeros = valor.split(regex);
+                resultado = operate(numeros[0], numeros[1], operador[0]);
+                console.log(resultado);
+                ecrã.value = resultado;
+                ecrã.value += "X";
+            } else {
+                ecrã.value += "X";
+                valor = ecrã.value;
+                console.log(valor);
+            }
             break;
         case "divi":
-            //valor.push("/");
-            //console.log(valor);
-            ecrã.value += "/";
+            valor = ecrã.value;
+            operador = valor.match(regex);
+            if (operador) {
+                numeros = valor.split(regex);
+                resultado = operate(numeros[0], numeros[1], operador[0]);
+                console.log(resultado);
+                ecrã.value = resultado;
+                ecrã.value += "/";
+            } else {
+                ecrã.value += "/";
+                valor = ecrã.value;
+                console.log(valor);
+            }
             break;
         case "igual":
             valor = ecrã.value;
