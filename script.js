@@ -25,7 +25,7 @@ const operate = (num1, num2, operador) => {
 
 const ecrã = document.querySelector("#ecrã");
 const teclado = document.querySelector("#teclado");
-const n0 = document.querySelector("#n0");
+/* const n0 = document.querySelector("#n0");
 const n1 = document.querySelector("#n1");
 const n2 = document.querySelector("#n2");
 const n3 = document.querySelector("#n3");
@@ -40,7 +40,7 @@ const sub = document.querySelector("#sub");
 const multi = document.querySelector("#multi");
 const divi = document.querySelector("#divi");
 const igual = document.querySelector("#igual");
-const apagar = document.querySelector("#apagar");
+const apagar = document.querySelector("#apagar"); */
 
 let valor = "";
 let resultado = 0;
