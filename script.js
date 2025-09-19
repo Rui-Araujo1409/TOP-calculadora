@@ -1,9 +1,9 @@
 //let operador = ["+", "-", "x", "/"];
 
-const soma = (num1, num2) => num1 + num2;
-const subtracção = (num1, num2) => num1 - num2;
-const multiplicação = (num1, num2) => num1 * num2;
-const divisão = (num1, num2) => num1 / num2;
+const soma = (num1, num2) => parseInt(num1) + parseInt(num2);
+const subtracção = (num1, num2) => parseInt(num1) - parseInt(num2);
+const multiplicação = (num1, num2) => parseInt(num1) * parseInt(num2);
+const divisão = (num1, num2) => parseInt(num1) / parseInt(num2);
 
 const operate = (num1, num2, operador) => {
     switch (operador) {
@@ -13,7 +13,7 @@ const operate = (num1, num2, operador) => {
         case ("-"):
             return subtracção(num1, num2);
             break;
-        case ("x"):
+        case ("X"):
             return multiplicação(num1, num2);
             break;
         case ("/"):
@@ -42,7 +42,9 @@ const divi = document.querySelector("#divi");
 const igual = document.querySelector("#igual");
 const apagar = document.querySelector("#apagar");
 
-let valor = [];
+let valor = "";
+let resultado = 0;
+let regex = /[+-/X]/g;
 
 teclado.addEventListener("click", (e) => {
     let target = e.target;
@@ -79,33 +81,38 @@ teclado.addEventListener("click", (e) => {
             ecrã.value += "9";
             break;
         case "soma":
-            valor.push(ecrã.value);
-            valor.push("+");
-            console.log(valor);
+            // valor = ecrã.value;
+            //valor.push("+");
+            //console.log(valor);
             ecrã.value += "+";
             break;
         case "sub":
-            valor.push("-");
-            console.log(valor);
+            //valor.push("-");
+            //console.log(valor);
             ecrã.value += "-";
             break;
         case "multi":
-            valor.push("x");
-            console.log(valor);
+            //valor.push("x");
+            //console.log(valor);
             ecrã.value += "X";
             break;
         case "divi":
-            valor.push("/");
-            console.log(valor);
+            //valor.push("/");
+            //console.log(valor);
             ecrã.value += "/";
             break;
         case "igual":
-          valor.push(ecrã.value);
-          console.log(valor); 
+            valor = ecrã.value;
+            console.log(valor);
+            let operador = valor.match(regex);
+            let numeros = valor.split(regex);
+            resultado = operate(numeros[0], numeros[1], operador[0]);
+            console.log(resultado);
+            ecrã.value = resultado;
             break;
         case "apagar":
             ecrã.value = "";
-            valor = [];
+            valor = "";
             break;
     }
 })
